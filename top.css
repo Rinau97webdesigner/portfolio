@@ -1,0 +1,468 @@
+@charset "utf-8";
+/* CSS Document */
+/*SPのヘッダー*/
+.header {
+  height: 44px;
+  background-color: #fff;
+  position: relative;
+}
+.header h1 {
+  font-size: 1.3rem;
+  color: #FA6080;
+  position: absolute;
+  left: 24px;
+  top: 10px;
+}
+.header__navigation {
+  display: none;
+}
+/*//SPのヘッダー*/
+/*ハンバーガーアイコン（SPのみ）*/
+@media (max-width:480px){
+   #nav-drawers{
+		padding: 10px 24px 0 0;
+		text-align: right;
+		position: relative;
+	}
+	#nav-open{
+		display: inline-block;
+		vertical-align: middle;
+		width: 25px;
+		height: 22px;
+	}
+
+		#nav-open span, #nav-open span::before, #nav-open span::after{
+		position: absolute;
+		height: 3px;
+		width: 25px;
+		background-color: #777;
+		display: block;
+		content: "";
+	}
+	#nav-open span::before{
+		bottom: -8px;
+	}
+	#nav-open span::after{
+		bottom: -16px;
+	}
+    /* 閉じるエリア */
+    #nav-close{
+        z-index: 999;
+        position: fixed;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+    }
+    
+   /*押した際に表示*/
+	#nav-close{
+		z-index: 999;/*前面に表示*/
+		position: fixed;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		opacity: 0.5;	
+	}
+	#nav_content{
+		display: block;
+		z-index: 9999;/*z-index: 999よりも前面に＝大きい数字を設定,100刻みで*/
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 70%;
+		height: 100%;
+		background-color: #FFF;
+		text-align: left;
+		padding: 15px 0 0 24px;
+		box-shadow: 5px 0 25px rgba(0,0,0,0.25);
+		transform: translateX(-105%);/*閉じる機能*/
+		transition: 0.3s ease-in-out;/*ゆっくり動く*/
+		}
+	.nav-drawers__tittle{
+		display: block;
+		font-size: 1.2rem;
+		font-weight: 600;
+		color: #FA6980;
+		margin-bottom: 46px;
+	}
+	.nav-drawer__link-top{
+		display: block;
+	}
+	#nav_content ul li{
+		margin-bottom: 36px;
+	}
+	#nav_content ul li a{
+		text-decoration: none;
+		font-size: 1.6rem;
+		font-weight: 600;
+		color: #333;
+	}
+	#nav-input:checked ~ #nav-close{
+		display: block;
+	}
+	#nav-input:checked ~ #nav_content{
+		transform: translateX(0%);/*開く機能*/
+	}
+	}
+	/*//押した際に表示*/
+	
+/*ハンバーガーアイコン（SPのみ）*/
+/*PCのヘッダー*/
+@media(min-width:480px) {
+  .header {
+    max-width: 1040px;
+    margin: 0 auto;
+    min-height: 50px;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+  .header h1 {
+    font-size: 2rem;
+    top: 14px;
+  }
+  .header__navigation {
+    display: block;
+    text-align: right;
+  }
+  /*flex以外の横並び方法=一つの塊として横並びにする。青文字は半角スペース開けることでulのliを編集とする*/
+  .header__navigation ul li {
+    display: inline-block;
+    margin-left: 40px;
+  }
+  .header__navigation ul li a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+/*//PCのヘッダー*/
+.main {
+  background-color: #F6F8F9;
+}
+@media(min-width:1040px) {
+}
+/*SPのセクション*/
+.top_section {
+  margin-bottom: 60px;
+}
+.top_section .top_section__image {
+  height: 388px;
+  background-image: url("../images/top/top_image.jpg");
+  background-position: center;
+  /*高さを基準にすることで画像がきれいに映る*/
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative
+}
+.top_section__image h2 {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 15px;
+  width: 100%;
+}
+.top_section__image-message {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.top_section__lead {
+  margin: 0 24px;
+}
+/*//SPのセクション*/
+/*PCのヘッダー*/
+@media(min-width:480px) {
+  .top_section .top_section__image {
+    height: 600px;
+    margin-bottom: 80px;
+  }
+  .top_section__image h2 {
+    font-size: 3.2rem;
+    position: static;
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 60px 0 0 24px;
+  }
+  .top_section__image-message {
+    font-size: 2.0rem;
+    position: static;
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 25px 0 0 24px;
+  }
+  .top_section__lead {
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 4.0rem
+  }
+}
+/*//PCのヘッダー*/
+/*PC表示で幅が狭い時の微調整*/
+@media (max-width:550px) and (min-width:480px){
+	.header__navigation ul li{
+		margin-left: 10px;
+	}
+}
+/*//PC表示で幅が狭い時の微調整*/	
+	
+}
+
+/*SPのmenu_section*/
+.menu_section {
+  margin-bottom: 80px;
+}
+.menu_section h2 {
+  margin-bottom: 40px;
+}
+.menu_section ul {
+  margin: 0 24px;
+  list-style: none;
+}
+.menu_section ul li {
+  max-width: 327px;
+  margin: 0 auto;
+  background-color: #FFF;
+  margin-bottom: 40px;
+  border-radius: 6px;
+  text-align: left;
+}
+.menu_section__item-picture {
+  width: 100%;
+  height: 186px;
+  /*画像がつぶれないように*/
+  object-fit: cover;
+  object-position: 0 0;
+  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
+}
+.menu_section__item-title {
+  padding: 14px 20px;
+}
+.menu_section__item-description {
+  padding: 0 20px 20px 20px;
+}
+.menu_section__item-description span {
+  font-size: 1.2rem;
+}
+/*//SPのmenu_section*/
+/*PCのメニューセクション*/
+@media(min-width:1040px) {
+  .menu_section {
+    margin-bottom: 20px;
+  }
+  .menu_section ul {
+    max-width: 1040px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .menu_section ul li {
+    display: inline-block;
+    width: 320px;
+    margin-right: 40px;
+  }
+  /*疑似クラスを付けることで、ケーキだけ適用する*/
+  .menu_section ul li:last-child{
+    margin-right: 0;
+  }
+}
+/*//PCのメニューセクション*/
+/*SPのaccess_section*/
+.access_section {
+  background-color: #fff;
+  padding-top: 40px;
+  margin-bottom: 60px;
+}
+.access_section h2 {
+  margin-bottom: 40px;
+}
+.access_section address {
+  font-style: normal;
+  margin-bottom: 40px;
+}
+.access_section__map {
+  height: 330px;
+}
+.access_section__map iframe {
+  width: 100%;
+  height: 100%;
+  border: solid 1px #333;
+  box-sizing: border-box;
+}
+/*SPの時だけ改行する疑似要素（要素の時はコロン2つ）\Aは改行を意味する*/
+.access_section__break::after {
+  content: "\A";
+  white-space: pre; /*半角スペースに変換される改行（\A）を表示上の改行にする*/
+}
+/*//SPのaccess_section*/
+/*PCのaccess_section*/
+@media(min-width:1040px) {
+  .access_section {
+    padding: 60px 36px;
+    margin: 0 auto 60px;
+    max-width: 1040px;
+    box-sizing: border-box;
+  }
+  .access_section h2 {
+    border-bottom: solid 1px #F333;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+  .access_section address {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+  /*pcの時は改行しない（疑似要素）*/
+  .access_section__break::after {
+    content: ""; /*SPで使用していた改行をリセット*/
+  }
+  .access_section__map {
+    max-height: 840px;
+    margin: o auto;
+    height: 340px;
+  }
+}
+/*//PCのメニューセクション*/
+/*SPのnews_section*/
+.news_section {
+  background-color: #fff;
+  padding: 40px 24px 0;
+}
+.news_section h2 {
+  border-bottom: solid 1px #333;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+.news_section ol {
+  list-style: none;
+}
+.news_section ol li {
+  margin-bottom: 40px;
+  text-align: left;
+}
+.news_section ol li time {
+  font-weight: 600;
+}
+.news_section ol li time::after {
+  content: ":"
+}
+.news_section h3 {
+  display: inline;
+}
+/*//SPのnews_section*/
+/*PCのnews_section*/
+@media(min-width:1040px) {
+  .news_section {
+    padding: 60px 36px 20px;
+    max-width: 1040px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .news_section ol {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+}
+/*//PCのnews_section*/
+/*SPのfooter*/
+.footer {
+  background-color: #888;
+  padding-top: 46px;
+  padding-bottom: 20px;
+  font-weight: 600;
+  min-height: 228px;
+}
+.footer__site-map{
+	margin-bottom: 30px;
+}
+.footer__site-map h2{
+	display:none;
+}
+.footer__site-map ul li{
+	display: inline-block;
+	margin: 0 10px;
+}
+.footer__site-map ul li a{
+	text-decoration: none; 
+	color: #CAD0D2;
+}
+.footer__site-map ul li a:visited{
+	color: #CAD0D2;/*押したことで色が変わらないように設定*/
+}
+.footer__sns-links{
+	margin-bottom: 80px;
+	}
+.footer__sns-links li{
+display: inline-block;
+	width: 20px;
+	margin: 0 10px;
+}
+.footer__sns-links li img{
+	width:100%;
+}
+.footer small{
+	color:#fff;
+}
+/*//SPのfooter*/
+/*PCのfooter*/
+@media(min-width:1040px){
+	.footer{
+		margin: 0;
+		padding: 0 20px;
+	}
+	.footer__container{
+		max-width: 1000px;
+		margin: 0 auto;
+		padding-top: 40px;
+		text-align: left;
+	}
+	.footer__site-map{
+		float:left;
+	}
+	.footer__site-map h2{
+		display: inline-block;
+		width: 180px;
+		color: #fff;
+		vertical-align: top;
+	}
+	.footer__site-map ul{
+		display: inline-block;
+		margin-left: 10px;
+	}
+	.footer__site-map ul li{
+		display: block;
+		margin: 0;
+	}
+	.footer__sns-links{
+		float:right;
+	}
+	.footer small{
+		clear: both;
+		display: block;
+		text-align: center;
+	}
+}
+/*//PCのfooter*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
