@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{
+	font-size: 62.5%; /*16px*62.5%=10px*/
+	width: 100%;
+	box-sizing: border-box;/*要素の幅と高さをどう計算するか指定　border（境界）までを含む*/
+	scroll-behavior: smooth;/*スクロールがスムーズになる＝同じページで移動しているのが分かる*/
+}
+
+body{
+	color:#333;
+	font-family: "游ゴシック"、"YuGothic","游ゴシック体","Yu Gothic", "メイリオ", "san-serif";
+	font-weight: 500;
+	font-size:1.6em;
+	line-height: 2.4rem;
+	text-align: center;
+}
+
+section h2{
+	font-size:2.4rem;
+}
+
+a:hover{
+	opacity: 0.5;
+}
+
+.none{
+	display:none;
+}
+
+
+
+
+
+
+
